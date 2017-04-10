@@ -1,0 +1,50 @@
+## also use Alt-j as the prefix key
+set -g prefix  C-b
+set -g prefix2 M-j
+
+
+# flashy bell!
+set-option -g visual-bell on
+
+## move around panes with vim keybindings
+set-window-option -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+bind o select-pane -t :.+
+bind O select-pane -t :.-
+
+## jump to last session
+bind t switch-client -l
+## jump to last window
+bind y last-window
+## jump to last pane
+bind u last-pane
+
+# reload config file by pressing r
+# reload theme file by pressing R
+bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
+bind R source-file ~/.tmux/theme \; display "Theme file Reloaded!"
+
+# choose windows in a tree, grouped by session, expanded by default
+bind s choose-tree -suw
+
+# press \ to respawn a dead pane 
+bind \ respawn-pane
+
+## various window options
+set-option -g renumber-windows on
+set-option -g set-titles on
+set-window-option -g allow-rename on
+set-window-option -g alternate-screen on
+set-window-option -g automatic-rename on
+set-window-option -g window-status-bell-bg black
+set-window-option -g window-status-bell-fg blue
+set -g default-terminal "screen"
+set -g terminal-overrides "screen*:colors=256"
+
+# source the theme file here.
+# I tend to change my theme much more frequently than my hotkeys
+# so separate out the functionality from the look'n'feel
+source ~/.tmux/theme
