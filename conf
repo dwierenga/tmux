@@ -1,5 +1,5 @@
 ## set the main prefix to be Ctrl-Q to free up ctrl-b for line editing
-set -g prefix  C-Q
+set -g prefix  C-q
 ## also use Alt-j as the prefix key
 set -g prefix2 M-j
 
@@ -40,9 +40,9 @@ bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 bind T source-file ~/.tmux/theme \; display "Theme file Reloaded!"
 
 # choose windows in a tree, grouped by session, expanded by default
-if-shell 'tmux -V |grep "tmux 2.9"' "bind s choose-tree -w"
+if-shell 'tmux -V |grep "tmux 2.9"' "bind s choose-tree -GNsw"
 if-shell 'tmux -V |grep "tmux 2.8"' "bind s choose-tree -GZ"
-if-shell 'tmux -V |grep "tmux 2.7"' "bind s choose-tree -GZ"
+if-shell 'tmux -V |grep "tmux 2.7"' "bind s choose-tree -GNsw"
 if-shell 'tmux -V |grep "tmux 2.3"' "bind s choose-tree -suw"
 
 # press \ to toggle pane synchronization
