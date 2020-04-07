@@ -1,5 +1,5 @@
-## set the main prefix to be Ctrl-Q to free up ctrl-b for line editing
-set -g prefix  C-q
+## set the main prefix to be Ctrl-P for the right context-key on my Core Mechanics keyboard
+set -g prefix  C-P
 ## also use Alt-j as the prefix key
 set -g prefix2 M-j
 
