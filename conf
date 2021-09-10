@@ -19,13 +19,15 @@ bind o select-pane -t :.+
 bind O select-pane -t :.-
 
 # move window left/right
-bind w swap-window -t -1
-bind e swap-window -t +1
+bind w 'swap-window -t -; select-window -t -'
+bind e 'swap-window -t +; select-window -t +'
 
 # start new windows/panes in the current directory because it's easy to cd to home
 bind c new-window -c '#{pane_current_path}'
 bind '"' split-window -c '#{pane_current_path}'
-bind % split-window -h -c '#{pane_current_path}'
+bind _ split-window -c '#{pane_current_path}'
+bind - split-window -c '#{pane_current_path}'
+bind | split-window -h -c '#{pane_current_path}'
 
 ## jump to last session
 bind t switch-client -l
@@ -40,19 +42,22 @@ bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 bind T source-file ~/.tmux/theme \; display "Theme file Reloaded!"
 
 # choose windows in a tree, grouped by session, expanded by default
+if-shell 'tmux -V |grep "tmux next-3.3"' "bind s choose-tree -GN -O name"
 if-shell 'tmux -V |grep "tmux 2.9"' "bind s choose-tree -GNsw"
 if-shell 'tmux -V |grep "tmux 2.8"' "bind s choose-tree -GZ"
 if-shell 'tmux -V |grep "tmux 2.7"' "bind s choose-tree -GNsw"
 if-shell 'tmux -V |grep "tmux 2.3"' "bind s choose-tree -suw"
 
 # press \ to toggle pane synchronization
-bind \ set synchronize-panes 
+bind '\' setw synchronize-panes
 
 # bind < and > to resize panes left and right
 bind-key < resize-pane -L 3
 bind-key > resize-pane -R 3
 
 set-option -ga update-environment KRB5CCNAME
+set-option -ga update-environment SSH_AGENT_PID
+set-option -ga update-environment SSH_AUTH_SOCK
 set-option -sg escape-time 0
 ## various window options
 set-option -g renumber-windows on
@@ -64,10 +69,10 @@ set -g default-terminal "screen"
 set -g terminal-overrides "screen*:colors=256"
 
 ## pane resizing
-bind U resize-pane -U 5 
-bind D resize-pane -D 5 
-bind R resize-pane -R 5 
-bind L resize-pane -L 5 
+bind U resize-pane -U 5
+bind D resize-pane -D 5
+bind R resize-pane -R 5
+bind L resize-pane -L 5
 # source the theme file here.
 # I tend to change my theme much more frequently than my hotkeys
 # so separate out the functionality from the look'n'feel
