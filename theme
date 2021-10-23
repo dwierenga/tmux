@@ -5,7 +5,6 @@ set-option -g status-fg blue
 set-option -g status-interval 1
 set-option -g visual-activity on
 set-window-option -g monitor-activity on
-set-window-option -g window-status-current-fg white
 
 
 
@@ -21,7 +20,6 @@ set -g message-style "fg=colour144,bg=colour237"
 set -g pane-border-style "fg=colour237"
 set -g status-right-length "100"
 set -g status-left-length "100"
-setw -g window-status-activity-attr "none"
 setw -g window-status-activity-style "fg=colour27,bg=colour234,none"
 setw -g window-status-separator ""
 setw -g window-status-style "fg=colour108,bg=colour234,none"

@@ -77,8 +77,3 @@ bind L resize-pane -L 5
 # I tend to change my theme much more frequently than my hotkeys
 # so separate out the functionality from the look'n'feel
 source ~/.tmux/theme
-
-
-## fix pbcopy/pbpaste on Mac OS.  requires 'brew install reattach-to-user-namespace'
-## see https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
-if-shell 'test "$(uname -s)" = Darwin' 'set-option -g default-command "exec reattach-to-user-namespace -l bash"'
