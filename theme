@@ -20,11 +20,14 @@ set -g message-style "fg=colour144,bg=colour237"
 set -g pane-border-style "fg=colour237"
 set -g status-right-length "100"
 set -g status-left-length "100"
+
+
 setw -g window-status-activity-style "fg=colour27,bg=colour234,none"
 setw -g window-status-separator ""
 setw -g window-status-style "fg=colour108,bg=colour234,none"
-set -g status-left "#[fg=colour15,bg=colour27] #S #[fg=colour27,bg=colour234,nobold,nounderscore,noitalics]"
+set -g status-left "#[fg=colour15,bg=colour27] #S #{pane_height}x#{pane_width} #[fg=colour27,bg=colour234,none]"
 set -g status-right "#[fg=colour237,bg=colour234,nobold,nounderscore,noitalics]#[fg=colour144,bg=colour237] %d %b %Y  %H:%M:%S #[fg=colour27,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour15,bg=colour27] #h "
-setw -g window-status-format "#{?window_zoomed_flag, #[fg=black]#[bg=red] #I #T #{pane_current_command}, #[fg=colour108,bg=colour234] #I #T }"
-setw -g window-status-current-format "#{?window_zoomed_flag, #[fg=colour255]#[bg=red]#[nobold]#[noitalics]#[nounderscore] #I #[fg=yellow]#W #T #{pane_current_command},#[fg=colour144,bg=colour237] #I #[fg=yellow]#W #[fg=colour144]#T }"
+
+setw -g window-status-format "#[fg=cyan,bold] #I#{?#{e|-:#{window_panes},1},+#{window_panes},} #{pane_current_command} #T   "
+setw -g window-status-current-format "#[fg=white,bg=black,bold]#{?window_zoomed_flag,,} #I#{?#{e|-:#{window_panes},1},+#{window_panes},} #{pane_current_command} #T #{?window_zoomed_flag,,}  "
 set -g automatic-rename on
