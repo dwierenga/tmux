@@ -42,7 +42,7 @@ bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 bind T source-file ~/.tmux/theme \; display "Theme file Reloaded!"
 
 # choose windows in a tree, grouped by session, expanded by default
-if-shell 'tmux -V |grep "tmux next-3.3"' "bind s choose-tree -GNZ -O name"
+if-shell 'tmux -V |grep "tmux next-3.3"' "bind s choose-tree -GNZ -O index"
 if-shell 'tmux -V |grep "tmux 2.9"' "bind s choose-tree -GNsw"
 if-shell 'tmux -V |grep "tmux 2.8"' "bind s choose-tree -GZ"
 if-shell 'tmux -V |grep "tmux 2.7"' "bind s choose-tree -GNsw"
