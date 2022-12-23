@@ -68,6 +68,8 @@ set-window-option -g alternate-screen on
 set-window-option -g automatic-rename on
 set -g default-terminal "screen"
 set -g terminal-overrides "screen*:colors=256"
+set-option -g default-shell /usr/local/bin/ksh
+
 
 ## pane resizing
 bind U resize-pane -U 5
