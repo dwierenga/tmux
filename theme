@@ -31,6 +31,6 @@ set -g status-right "#[fg=colour237,bg=colour234,nobold,nounderscore,noitalics]�
 #setw -g window-status-format "#[fg=cyan,bold] #{?window_zoomed_flag,,}[#I]#{?#{e|-:#{window_panes},1}, +#{window_panes},} #{pane_current_command} #T #{pane_current_path}  "
 #setw -g window-status-current-format "#[fg=black,bg=yellow,bold]#{?window_zoomed_flag,,} [#I]#{?#{e|-:#{window_panes},1}, +#{window_panes},} #{pane_current_command} #T #{pane_current_path}"
 
-setw -g window-status-format "#[fg=cyan,bold][#I#{?#{e|-:#{window_panes},1},+#{window_panes},}] #{pane_current_command} #T #{pane_current_path}  "
-setw -g window-status-current-format "#[fg=black,bg=yellow,bold][#I#{?#{e|-:#{window_panes},1},+#{window_panes},}] #{pane_current_command} #T #{pane_current_path} "
+setw -g window-status-format " #[fg=cyan,bold]#I #{pane_current_command} #{pane_current_path} #[bg=blue,bold]#{?#{e|-:#{window_panes},1},+#{window_panes},}"
+setw -g window-status-current-format " #[fg=black,bg=yellow,bold]#I #{pane_current_command} #{pane_current_path} #[bg=blue,bold]#{?#{e|-:#{window_panes},1}, +#{window_panes},}"
 set -g automatic-rename on
