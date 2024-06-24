@@ -1,3 +1,6 @@
+RETIRED in favor of https://github.com/dwierenga/dotconfig
+
+
 My personal tmux configuration.  It's stored in ~/.tmux for ease of storing in Git without conflicting with any other dotfiles repo.
 
 Add this as your ~/.tmux.conf file:
